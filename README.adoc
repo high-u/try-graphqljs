@@ -10,9 +10,13 @@
 
 [source,sh]
 ----
+git clone https://github.com/high-u/try-graphqljs.git
+cd try-graphqljs
 npm install
 node server.js
 ----
+
+http://localhost:4000
 
 == Example queries
 
@@ -23,29 +27,38 @@ mutation {
     id
   }
 }
+----
 
+[source,graphql]
+----
 {
-  getUsers {
+  users {
     id
     name
     age
   }
 }
+----
 
+[source,graphql]
+----
 {
-  getUsers {
+  users {
     ...namename
   }
 }
 fragment namename on User {
-  name
   id
+  name
 }
+----
 
+[source,graphql]
+----
 {
-  users(id: "9740fea6d12593e00cd6") {
-    age
+  user(id: "9740fea6d12593e00cd6") {
     name
+    age
   }
 }
 ----
