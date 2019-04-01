@@ -1,6 +1,7 @@
 :toc: left
+:toclevels: 5
+:sectlinks:
 :sectnums:
-:chapter-label:
 :source-highlighter: coderay
 
 = Try GraphQL.js
