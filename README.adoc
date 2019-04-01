@@ -1,3 +1,50 @@
+:toc: left
+:sectnums:
+:chapter-label:
+:source-highlighter: coderay
+
 = Try GraphQL.js
 
+== Usage
 
+[source,sh]
+----
+npm install
+node server.js
+----
+
+== Example queries
+
+[source,graphql]
+----
+mutation {
+  setUser(input: {age: 25, name: "foo"}) {
+    id
+  }
+}
+
+{
+  getUsers {
+    id
+    name
+    age
+  }
+}
+
+{
+  getUsers {
+    ...namename
+  }
+}
+fragment namename on User {
+  name
+  id
+}
+
+{
+  users(id: "9740fea6d12593e00cd6") {
+    age
+    name
+  }
+}
+----
